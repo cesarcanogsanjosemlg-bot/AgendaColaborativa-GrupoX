@@ -3,15 +3,23 @@ package package1;
 import java.util.ArrayList;
 import java.util.List;
 
-import controlador.Contacto;
-
 public class Agenda {
-	 private List<Contacto> listaContactos;
+	private List<Contacto> listaContactos;
 
-	    public Agenda() {
-	        this.listaContactos = new ArrayList<>();
-	    }
-	public void agregarContacto(Contacto c) {}
+	// Constructor
+	public Agenda() {
+		this.listaContactos = new ArrayList<>();
+	}
+
+	// Agrega un contacto a la lista
+	public void agregarContacto(Contacto c) {
+		if (c.getNombre() != null && c.getTelefono() != 0 || c.getNombre() != null && c.getEmail() != null) {
+			listaContactos.add(c);
+			System.out.println("Contacto agregado: " + c.getNombre());
+		} else {
+			System.out.println("Faltan campos obligatorios.");
+		}
+	}
 	
 	public void eliminarContacto(String nombre) {
         Contacto c = buscarContacto(nombre);
