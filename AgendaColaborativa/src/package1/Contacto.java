@@ -2,7 +2,7 @@ package package1;
 
 public class Contacto {
     private String nombre;
-    private String telefono;
+    private int telefono;
     private String email;
 
     // Constructor
