@@ -13,8 +13,12 @@ public class Agenda {
 
 	// Agrega un contacto a la lista
 	public void agregarContacto(Contacto c) {
-		listaContactos.add(c);
-		System.out.println("Contacto agregado: " + c.getNombre());
+		if (c.getNombre() != null && c.getTelefono() != null || c.getNombre() != null && c.getEmail() != null) {
+			listaContactos.add(c);
+			System.out.println("Contacto agregado: " + c.getNombre());
+		} else {
+			System.out.println("Faltan campos obligatorios.");
+		}
 	}
 	
 	public void eliminarContacto(String nombre) {}
