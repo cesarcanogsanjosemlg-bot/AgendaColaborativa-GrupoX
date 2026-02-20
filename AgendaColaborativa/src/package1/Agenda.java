@@ -13,7 +13,7 @@ public class Agenda {
 
 	// Agrega un contacto a la lista
 	public void agregarContacto(Contacto c) {
-		if (c.getNombre() != null && c.getTelefono() != null || c.getNombre() != null && c.getEmail() != null) {
+		if (c.getNombre() != null && c.getTelefono() != 0 || c.getNombre() != null && c.getEmail() != null) {
 			listaContactos.add(c);
 			System.out.println("Contacto agregado: " + c.getNombre());
 		} else {
