@@ -21,9 +21,26 @@ public class Agenda {
 		}
 	}
 	
-	public void eliminarContacto(String nombre) {}
-	
-	public void buscarContacto(String nombre) {}
+	public void eliminarContacto(String nombre) {
+        Contacto c = buscarContacto(nombre);
+        if (c != null) { 
+            listaContactos.remove(c);
+            System.out.println("Contacto '" + nombre + "' eliminado correctamente.");
+        } 
+        else {
+            System.out.println("el contacto '" + nombre + "' no existe.");
+        }
+    }
+
+    public Contacto buscarContacto(String nombre) {
+        for (Contacto c : listaContactos) {
+            if (c.getNombre().equalsIgnoreCase(nombre)) {
+                return c;
+            }
+        }
+        return null;
+    }
+
 	
 	public void listarContactos() {}
 	
